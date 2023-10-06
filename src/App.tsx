@@ -9,18 +9,19 @@ import { Swiper, SwiperSlide, SwiperClass  } from "swiper/react";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import {  useState } from "react";
+import { useState } from "react";
 function App() {
-  const [thumbSwiper, setThumbSwiper] = useState<SwiperClass | undefined>(undefined);
 
+  const [firstSwiper, setFirstSwiper] = useState<SwiperClass | undefined>(undefined);
+  
   return (
     <>
       <Swiper
         loop={true}
         spaceBetween={10}
         navigation={true}
-        thumbs={ thumbSwiper ? { swiper: thumbSwiper } : undefined}
-        modules={[FreeMode, Navigation, Thumbs]}
+        thumbs={{ swiper: firstSwiper }}
+        modules={[FreeMode, Navigation, Thumbs, ]}
         className="mySwiper2"
       >
         <SwiperSlide>
@@ -55,16 +56,16 @@ function App() {
         </SwiperSlide>
       </Swiper>
       <Swiper
-        onSwiper={
-          setThumbSwiper
-        }
+        onSwiper={(swiper) => {
+          setFirstSwiper(swiper)
+        }}
         loop={true}
         spaceBetween={10}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
+        className="mySwiper"        
       >
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
