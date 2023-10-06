@@ -1,5 +1,5 @@
 import "./App.css";
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -7,7 +7,7 @@ import "swiper/css/thumbs";
 
 import { Swiper, SwiperSlide, SwiperClass  } from "swiper/react";
 
-// import required modules
+
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { useState } from "react";
 function App() {
