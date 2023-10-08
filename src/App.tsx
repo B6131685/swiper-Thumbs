@@ -56,9 +56,7 @@ function App() {
         </SwiperSlide>
       </Swiper>
       <Swiper
-        onSwiper={(swiper) => {
-          setFirstSwiper(swiper)
-        }}
+        onSwiper={setFirstSwiper}
         loop={true}
         spaceBetween={10}
         slidesPerView={4}
